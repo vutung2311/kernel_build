@@ -1339,7 +1339,8 @@ if [ -n "${BUILD_BOOT_IMG}" -o -n "${BUILD_VENDOR_BOOT_IMG}" ] ; then
             --partition_size ${AVB_BOOT_PARTITION_SIZE} \
             --image ${DIST_DIR}/boot.img \
             --algorithm ${AVB_BOOT_ALGORITHM} \
-            --key ${AVB_BOOT_KEY}
+            --key ${AVB_BOOT_KEY} \
+            ${AVB_BOOT_EXTRA_ARGS}
       else
         echo "Missing the AVB_* flags. Failed to sign the boot image" 1>&2
         exit 1
